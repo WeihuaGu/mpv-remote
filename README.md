@@ -1,30 +1,33 @@
 # mpv-remote
 
-mpv-remote is a client and server program to allow basic control of mpv from a phone/computer on the same network
-
-### Installation
-
-mpv-remote requires [Node.js](https://nodejs.org/) v8+ to run.
-
-Install the dependencies and start the server.
+使用手机或者其它电脑控制mpv的播放。（例如你将kodi的默认播放器更改为mpv时，本身的kodi无法控制mpv)
+### 安装
 
 ```sh
-$ yarn install
-$ node app.js {optional_port_number}
+$ npm install
+```
+### 启动服务
+
+```sh
+$ node app.js {端口号}
+```
+#### 可以使用pm2工具讲服务加入开机启动
+
+```sh
+$ npm install -g pm2
+$ pm2 start app.js
+$ pm2 startup
+$ pm2 save
 ```
 
-If the installation was successful, you'll see a message like:
-```
-mpv remote listening on: 192.168.0.xxx:{port number}
-```
-Now using a phone browser, visit the local network ip address from the above message, which should let you see the playback controls.
+### 启动mpv时带有input-ipc-server选项
 
-Now start `mpv` with ipc enabled:
 ```sh
 $ mpv --input-ipc-server=/tmp/mpvsocket example.mp4
 ```
 
-If everything is configured correctly, the play/pause and 15 second rewind buttons should control the media playback.
+### 手机访问http://ip:port就可以使用了
+
 
 
 
