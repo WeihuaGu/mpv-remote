@@ -11,7 +11,9 @@ $ npm install
 ```sh
 $ node app.js {端口号}
 ```
-#### 可以使用pm2工具讲服务加入开机启动
+
+不加端口号 默认3000
+#### 可以使用pm2工具将服务加入开机启动
 
 ```sh
 $ npm install -g pm2
@@ -26,7 +28,8 @@ $ pm2 save
 $ mpv --input-ipc-server=/tmp/mpvsocket example.mp4
 ```
 
-### 手机访问http://ip:port就可以使用了
+
+### 手机访问 http://ip:port 就可以使用遥控器了
 
 
 
